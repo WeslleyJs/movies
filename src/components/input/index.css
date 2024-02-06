@@ -1,0 +1,22 @@
+form {
+    position: relative;
+    display: inline-block; /* Para garantir que o botão não ocupe toda a largura */
+  }
+  
+  input {
+    padding-right: 40px; /* Ajuste conforme necessário para acomodar o botão */
+  }
+  
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    margin: 0;
+  }
+
+.button-search{
+    border:none;
+    background: none;
+    padding-top: 6px;
+}

@@ -1,0 +1,11 @@
+
+.movie-modal{
+    opacity: 0;
+    transition: 1s;
+}
+.movie-item:hover .movie-modal{
+    opacity: 1;
+}
+.movie-item-header:hover{
+    filter: brightness(50%);
+}
