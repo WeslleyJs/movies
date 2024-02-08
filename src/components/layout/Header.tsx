@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { RiHome2Line } from "react-icons/ri";
-import { AiOutlineSearch } from "react-icons/ai";
 import Search from "../input/Search";
 import { IoStarSharp, IoHomeOutline } from "react-icons/io5";
 import Emphasis from "../input/Emphasis";
@@ -8,13 +6,21 @@ import "./Header.css";
 import { Menubar } from "primereact/menubar";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
+interface Movies {
+  id: number;
+  title: string;
+  poster_path: string;
+  featured?: boolean;
+}
+
 export default function Header({ valueEmphasis, searchValue }) {
   const [value, setValue] = useState(false);
   const DataFromEmphasis = (data: boolean) => {
     valueEmphasis(data);
     setValue(data);
   };
-  const getValueSearch = (data) => {
+  const getValueSearch = (data: Movies) => {
+    console.log("minha data", typeof data);
     searchValue(data);
   };
 
@@ -31,7 +37,7 @@ export default function Header({ valueEmphasis, searchValue }) {
 
   return (
     <div className="header-components">
-      <Menubar className="teste" model={items} />
+      <Menubar className="list-menu" model={items} />
       <Search searchMovie={getValueSearch} />
     </div>
   );

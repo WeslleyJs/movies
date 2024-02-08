@@ -40,17 +40,18 @@ export default function BasicDoc({ movie }: MovieItems) {
           </li>
           <li>
             <p className="lowlight">
-              Lançamento: {dayjs(movie.release_date).format("DD/MM/YYYY")}
+              Date: {dayjs(movie.release_date).format("DD/MM/YYYY")}
             </p>
             <p className="lowlight">
-              Dublagem: {movie.original_language.toUpperCase()}
+              Language:{" "}
+              {movie.original_language.toUpperCase() === "EN"
+                ? "English"
+                : movie.original_language.toUpperCase()}
             </p>
           </li>
           <li>
-            <p className="lowlight">Nota: {movie.vote_average} /10</p>
-            <p className="lowlight">
-              Categoria: {movie.adult ? "+18" : "Free"}
-            </p>
+            <p className="lowlight">Rating: {movie.vote_average} /10</p>
+            <p className="lowlight">Category: {movie.adult ? "+18" : "Free"}</p>
           </li>
         </ul>
       </Dialog>

@@ -1,10 +1,17 @@
 form {
     position: relative;
-    display: inline-block; /* Para garantir que o botão não ocupe toda a largura */
+    display: inline-block; 
   }
   
   input {
-    padding-right: 40px; /* Ajuste conforme necessário para acomodar o botão */
+    background: none;
+    color: white;
+  }
+  form:focus{
+    border: none;
+  }
+  input:focus{
+    border: none;
   }
   
   button {
@@ -16,7 +23,20 @@ form {
   }
 
 .button-search{
+    color: white;
     border:none;
     background: none;
     padding-top: 6px;
+    padding-right: 15px;
+}
+.form-search{
+  border: none;
+  background-color: #181818;
+  border-radius: 15px;
+}
+.form-input{
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #181818;
+  border: none;
 }

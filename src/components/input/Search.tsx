@@ -1,7 +1,5 @@
-import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import movies from "../../data/popular.json";
-import MovieItem from "../movies/MovieItem";
-import MoviesList from "../movies/MoviesList";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./index.css";
 
@@ -32,12 +30,13 @@ export default function FindMovie({ searchMovie }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="">
+      <form onSubmit={handleSubmit} className="form-search">
         <input
           type="text"
-          placeholder="PESQUISA"
+          placeholder="SEARCH"
           onChange={handleChange}
           value={search}
+          className="form-input"
         />
         <button type="submit" className="button-search">
           <AiOutlineSearch />

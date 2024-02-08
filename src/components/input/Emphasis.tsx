@@ -11,5 +11,5 @@ export default function Emphasis({ showEmphasis }) {
     setValue((prevValue) => !prevValue);
   };
 
-  return <p onClick={handClick}>Destaques</p>;
+  return <p onClick={handClick}>Emphasis</p>;
 }
