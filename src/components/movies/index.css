@@ -1,11 +1,27 @@
-
-.movie-modal{
+.movie-item{
+    position: relative;
+}
+.modal-movie-btn {
+    position: absolute;
+    /* top: 50%; */
+    bottom: 50%;
+    /* width: 100%; */
+    left: 9em;
+    transform: translate(-50%);
     opacity: 0;
-    transition: 1s;
+    z-index: 1;
+    line-height: 1;
+    padding: 7px 10px;
+    white-space: nowrap;
+    transition: opacity 0.5s;
 }
-.movie-item:hover .movie-modal{
+
+
+.movie-item:hover .modal-movie-btn{
     opacity: 1;
+    transition: .5s;
 }
-.movie-item-header:hover{
+.movie-item:hover .movie-item__poster{
     filter: brightness(50%);
+    transition: .5s;
 }

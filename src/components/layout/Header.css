@@ -25,18 +25,19 @@
 .p-menubar, .p-component{
     border: none;
 }
+.p-menubar-root-list{
+    background-color: #000 !important; 
+}
 .select-golden{
     color: gold;
 }
 .p-menubar-root-list{
     background-color: rgba(18,18,18, 0.8);
     gap: 15px;
+    width: auto;
+    padding: 10px;
 }
-.teste{
-    border-radius: 0;
-    background-color: #000;
-    padding: 15px;
-}
+
 .p-menuitem-text{
     color: white;
 }

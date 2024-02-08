@@ -10,6 +10,7 @@
     "main": "src/index.tsx",
     "dependencies": {
         "@react-icons/all-files": "^4.1.0",
+        "dayjs": "^1.11.10",
         "primereact": "^10.3.3",
         "react": "18.2.0",
         "react-burger-menu": "3.0.6",

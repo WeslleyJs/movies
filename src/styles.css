@@ -8,15 +8,26 @@ body {
       "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     margin: 0;
-  }
-  
+  }  
   .movies-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
+    background-color: #181818;
     padding: 15px;
   }
+  @media (max-width: 600px) {
+    .movies-list {
+      grid-template-columns: repeat(2, 1fr); /* Altera para duas colunas em telas menores */
+    }
+  }
   
+  /* Estilos para dispositivos com largura até 400 pixels */
+  @media (max-width: 400px) {
+    .movies-list {
+      grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+  }
   .movie-item {
     position: relative;
   }
@@ -27,7 +38,7 @@ body {
   
   .movie-item__poster {
     display: block;
-    width: 100%;
+    width: auto;
   }
   
   .movie-item__title {

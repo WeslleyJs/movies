@@ -1,42 +1,58 @@
 import React, { useState } from "react";
 import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
-
+import dayjs from "dayjs";
 import "./index.css";
-
-interface ModalMovieProps {
-  className?: string;
+interface Movie {
+  title: string;
+  overview: string;
+  release_date: string;
+  original_language: string;
+  vote_average: number[];
+  adult: boolean;
 }
 
-export default function BasicDoc({ className }: ModalMovieProps) {
+interface MovieItems {
+  movie: Movie;
+}
+export default function BasicDoc({ movie }: MovieItems) {
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <div
-      className={`card flex justify-content-center movie-modal ${
-        className || ""
-      }`}
-    >
+    <div className="modal">
       <Button
         label="+ Detalhes"
         icon="pi pi-external-link"
         onClick={() => setVisible(true)}
+        style={{ borderRadius: "10px" }}
       />
       <Dialog
-        header="Header"
+        header={movie.title}
         visible={visible}
         style={{ width: "50vw" }}
         onHide={() => setVisible(false)}
+        focusOnShow={false}
+        className="modal-details"
       >
-        <p className="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <ul>
+          <li>
+            <p className="overview">{movie.overview}</p>
+          </li>
+          <li>
+            <p className="lowlight">
+              Lançamento: {dayjs(movie.release_date).format("DD/MM/YYYY")}
+            </p>
+            <p className="lowlight">
+              Dublagem: {movie.original_language.toUpperCase()}
+            </p>
+          </li>
+          <li>
+            <p className="lowlight">Nota: {movie.vote_average} /10</p>
+            <p className="lowlight">
+              Categoria: {movie.adult ? "+18" : "Free"}
+            </p>
+          </li>
+        </ul>
       </Dialog>
     </div>
   );

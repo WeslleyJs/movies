@@ -25,7 +25,6 @@ export default function MoviesList({
       <MovieItem key={movie.id} movie={movie} boo={showEmphasis} search={mov} />
     )) || [];
 
-  console.log("meu mov", mov);
   return (
     <>
       {mov && mov.length > 0 && (

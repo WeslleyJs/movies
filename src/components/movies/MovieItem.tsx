@@ -13,22 +13,24 @@ interface MovieItems {
   boo: boolean;
   mov: Movie[];
 }
-export default function MovieItem({ movie, boo, mov }: MovieItems) {
+export default function MovieItem({ movie, boo }: MovieItems) {
   return (
     <>
       {boo && movie.featured && (
-        <div className="movie-item show-details-header">
-          <header className="movie-item-header show-details-header">
+        <div className="movie-item card">
+          <header className="movie-item-header">
             <img
               className="movie-item__poster"
               src={assetsUrl + movie.poster_path}
               alt=""
               draggable={false}
             />
-            <ModalMovie className="show-details" />
             {movie.featured && (
               <span className="movie-item__badge">Em destaque</span>
             )}
+            <div className="modal-movie-btn">
+              <ModalMovie movie={movie} />
+            </div>
           </header>
         </div>
       )}
@@ -42,12 +44,13 @@ export default function MovieItem({ movie, boo, mov }: MovieItems) {
               alt=""
               draggable={false}
             />
-            <ModalMovie className="movie-modal" />
             {movie.featured && (
               <span className="movie-item__badge">Em destaque</span>
             )}
           </header>
-          {!boo && mov && <h1>Ola</h1>}
+          <div className="modal-movie-btn">
+            <ModalMovie movie={movie} />
+          </div>
         </div>
       )}
     </>
