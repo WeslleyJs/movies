@@ -20,7 +20,6 @@ export default function Header({ valueEmphasis, searchValue }) {
     setValue(data);
   };
   const getValueSearch = (data: Movies) => {
-    console.log("minha data", typeof data);
     searchValue(data);
   };
 

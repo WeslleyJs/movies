@@ -1,0 +1,15 @@
+.category{
+    color: white;
+    padding-left: 20px;
+    display: grid;
+    font-size: .8em;
+    grid-template-columns: repeat(6, 1fr);
+}
+@media (max-width: 600px) {
+    .category {
+      grid-template-columns: repeat(4, 1fr); 
+    }
+  }
+.category p {
+  cursor: pointer;
+}

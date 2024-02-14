@@ -1,0 +1,8 @@
+.error-search {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    font-size: 0.8em;
+    color: white;
+    text-align: center;
+}

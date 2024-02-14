@@ -23,3 +23,6 @@
     filter: brightness(50%);
     transition: .5s;
 }
+p{
+    color: white;
+}
