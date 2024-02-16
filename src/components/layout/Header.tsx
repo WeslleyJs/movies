@@ -6,9 +6,6 @@ import "./Header.css";
 import { Menubar } from "primereact/menubar";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
-interface SearchMovies {
-  data: string;
-}
 interface Movies {
   id: number;
   title: string;
@@ -26,9 +23,10 @@ export default function Header({ valueEmphasis, searchValue }) {
   const getValueSearch = (data: Movies) => {
     setSearchMovies(data);
   };
+
   useEffect(() => {
     searchValue(searchMovies);
-  }, [searchMovies, searchValue]);
+  }, [searchMovies]);
   const items = [
     {
       label: "Home",

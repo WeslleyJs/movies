@@ -3,39 +3,33 @@ import Category from "../components/Category/Category";
 import Header from "../components/layout/Header";
 import MoviesList from "../components/movies/MoviesList";
 
-interface Movies {
-  id: number;
-  title: string;
-  poster_path: string;
-  featured?: boolean;
-}
 interface searchMovie {
   data: string;
 }
 export default function Home() {
   const [value, setValue] = useState<boolean>(false);
-  const [searchResults, setSearchResults] = useState<string>();
-  const [cat, setCat] = useState(null);
+  const [mov, setMov] = useState<string>();
+  const [filterCategory, setFilterCategory] = useState<number>(null);
   const valueFromEmphasis = (data: boolean) => {
     setValue(data);
   };
   const movie = (data: searchMovie) => {
-    setSearchResults(data);
+    setMov(data);
   };
-  const category = (data) => {
-    setCat(data);
+  const category = (data: number) => {
+    setFilterCategory(data);
   };
   useEffect(() => {
-    setSearchResults(searchResults);
-  }, [searchResults]);
+    setMov(mov);
+  }, [mov]);
   return (
     <>
       <Header valueEmphasis={valueFromEmphasis} searchValue={movie} />
       <Category setCategory={category} />
       <MoviesList
         showEmphasis={value}
-        mov={searchResults}
-        filterCategory={cat}
+        mov={mov}
+        filterCategory={filterCategory}
       />
     </>
   );

@@ -1,12 +1,7 @@
-import {
-  useState,
-  FormEvent,
-  ChangeEvent,
-  useEffect,
-  useCallback,
-} from "react";
+import { useState, FormEvent, useCallback, useEffect } from "react";
 import movies from "../../data/popular.json";
 import { AiOutlineSearch } from "react-icons/ai";
+import { MdCancel } from "react-icons/md";
 import "./index.css";
 
 interface Movies {
@@ -42,6 +37,13 @@ export default function FindMovie({ onSearch }) {
         />
         <button type="submit" className="button-search">
           <AiOutlineSearch />
+        </button>
+        <button
+          type="submit"
+          className="button-cancel"
+          onClick={() => setSearch("")}
+        >
+          <MdCancel />
         </button>
       </form>
     </>

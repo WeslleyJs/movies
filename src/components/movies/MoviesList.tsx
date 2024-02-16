@@ -13,7 +13,8 @@ interface MoviesList {
 interface MoviesListProps {
   showEmphasis: boolean;
   mov: MoviesList[];
-  filterCategory: Movie[];
+  filterCategory: MoviesList[];
+  showSearch: string;
 }
 export default function MoviesList({
   showEmphasis,

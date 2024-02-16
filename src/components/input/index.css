@@ -24,16 +24,23 @@ form {
     cursor: pointer;
   }
   .button-search{
-    background-color: blue;
     color: white;
     border:none;
     background: none;
     padding-top: 6px;
-    padding-right: 15px;
+    padding-right: 20px;
+    padding-left: 10px;
+    border-left: rgba(80,80,80, .8) .1rem solid;
   }
   .button-cancel{
-    margin-right: 300px;
+    color: white;
+    border:none;
+    background: none;
+    padding-top: 6px;
+    padding-right: 60px;
+    transition: 1s;
   }
+
 .form-search{
   border: none;
   background-color: #181818;
