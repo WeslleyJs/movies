@@ -37,7 +37,7 @@ form {
     border:none;
     background: none;
     padding-top: 6px;
-    padding-right: 60px;
+    margin-right: 60px;
     transition: 1s;
   }
 

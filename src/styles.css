@@ -20,14 +20,13 @@ body {
   }
   @media (max-width: 600px) {
     .movies-list {
-      grid-template-columns: repeat(2, 1fr); /* Altera para duas colunas em telas menores */
+      grid-template-columns: repeat(2, 1fr); 
     }
   }
   
-  /* Estilos para dispositivos com largura até 400 pixels */
   @media (max-width: 400px) {
     .movies-list {
-      grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+      grid-template-columns: 1fr;
     }
   }
   .movie-item {
