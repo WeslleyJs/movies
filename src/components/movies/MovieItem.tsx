@@ -1,21 +1,20 @@
 import ModalMovie from "../modal/ModalMovie";
-import Error from "../404/404";
 
 import "./index.css";
 const assetsUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
 interface Movie {
   title: string;
-  poster_path: string;
-  featured: boolean;
   id: number;
+  poster_path: string;
+  featured?: boolean;
+  genre_ids: number;
 }
 
 interface MovieItems {
   movie: Movie;
   boo: boolean;
-  mov: Movie[];
 }
-export default function MovieItem({ movie, boo, id }: MovieItems) {
+export default function MovieItem({ movie, boo }: MovieItems) {
   return (
     <>
       {boo && movie.featured && (

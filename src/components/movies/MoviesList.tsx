@@ -1,8 +1,8 @@
 import MovieItem from "./MovieItem";
 import movies from "../../data/popular.json";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Error from "../404/404";
-interface Movie {
+interface MoviesList {
   id: number;
   title: string;
   poster_path: string;
@@ -11,31 +11,27 @@ interface Movie {
 }
 
 interface MoviesListProps {
-  showEmphasis: boolean | null;
-  mov: Movie[];
+  showEmphasis: boolean;
+  mov: MoviesList[];
   filterCategory: Movie[];
 }
 export default function MoviesList({
   showEmphasis,
   filterCategory,
-  mov = [],
+  mov,
 }: MoviesListProps) {
-  const moviesItems = movies.map((movie: Movie) => (
+  const moviesItems = movies.map((movie: MoviesList) => (
     <MovieItem key={movie.id} movie={movie} boo={showEmphasis} />
   ));
-  const categoryFilter = movies.filter((movie: Movie) => {
+  const categoryFilter = movies.filter((movie: MoviesList) => {
     return movie.genre_ids.includes(filterCategory);
   });
-  const category = categoryFilter.map((movie: Movie) => (
+  const category = categoryFilter.map((movie: MoviesList) => (
     <MovieItem key={movie.id} movie={movie} />
   ));
-
-  const movieSearch =
-    mov?.map((movie: Movie) => (
-      <MovieItem key={movie.id} movie={movie} boo={showEmphasis} search={mov} />
-    )) || [];
-
-  useEffect(() => {}, [showEmphasis, filterCategory, mov]);
+  const movieSearch = mov?.map((movie: MoviesList) => (
+    <MovieItem key={movie.id} movie={movie} boo={showEmphasis} search={mov} />
+  ));
   return (
     <>
       {!mov && !filterCategory && (

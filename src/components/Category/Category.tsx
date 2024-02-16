@@ -13,7 +13,7 @@ interface objType {
   id: number;
 }
 export default function Category({ setCategory }) {
-  const [id, setId] = useState<number | null>(null);
+  const [id, setId] = useState<string | null>(null);
 
   const moviesId = movies.map((e: Genres) => e.genre_ids).flat();
   const moviesFilter = moviesId.filter((id, indice, self) => {
@@ -37,11 +37,13 @@ export default function Category({ setCategory }) {
   };
   useEffect(() => {
     setCategory(id);
-  }, [id]);
+    console.log(id);
+    console.log(moviesFilter.id);
+  }, [id, moviesFilter]);
   return (
     <>
       <div className="category">
-        <p onClick={() => setId(moviesFilter.id)}>All Movies</p>
+        <p onClick={() => setId(null)}>All Movies</p>
         <>{result}</>
       </div>
     </>

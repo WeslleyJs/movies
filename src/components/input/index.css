@@ -21,6 +21,7 @@ form {
     right: 0;
     height: 100%;
     margin: 0;
+    cursor: pointer;
   }
   .button-search{
     background-color: blue;
